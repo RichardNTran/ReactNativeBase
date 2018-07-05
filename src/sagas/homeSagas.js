@@ -3,8 +3,8 @@ import {
   FETCHING_DATA,
   FETCHING_DATA_SUCCESS,
   FETCHING_DATA_FAILURE,
-} from '../constants/homeConstants';
-import getPeople from '../api';
+} from 'constants/homeConstants';
+import getPeople from 'services/homeServices';
 
 function* fetchData(action) {
   try {

@@ -2,7 +2,7 @@ import {
   FETCHING_DATA,
   FETCHING_DATA_SUCCESS,
   FETCHING_DATA_FAILURE,
-} from '../constants/homeConstants';
+} from 'constants/homeConstants';
 
 const initialState = {
   data: [],
