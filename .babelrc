@@ -1,5 +1,23 @@
 {
   "presets": [
     "react-native"
-  ]
+  ],
+  "env": {
+    "development": {
+      "plugins": 
+        ["transform-react-jsx-source",
+          ["module-resolver",{
+              "root": ["./src"],
+              "alias": {
+                "actions": "./src/actions",
+                "constants": "./src/constants",
+                "reducers": "./src/reducers",
+                "screens": "./src/screens",
+                "services": "./src/services"
+              }
+            }
+          ]
+        ]
+      }
+    }
 }

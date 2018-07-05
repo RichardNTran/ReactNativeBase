@@ -1,4 +1,4 @@
-import { FETCHING_DATA } from '../constants/homeConstants';
+import { FETCHING_DATA } from 'constants/homeConstants';
 
 export function fetchData() {
   return {

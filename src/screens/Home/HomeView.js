@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { TouchableHighlight, View, Text, StyleSheet } from 'react-native';
-
 import { connect } from 'react-redux';
-import { fetchData } from '../../actions/homeActions';
+
+import { fetchData } from 'actions/homeActions';
 
 class Home extends Component {
   render() {
@@ -16,7 +16,6 @@ class Home extends Component {
     const {
       appData,
     } = this.props;
-    console.log(this.props);
     return (
       <View style={container}>
         <Text style={text}>Redux Examples</Text>
@@ -77,5 +76,4 @@ const styles = StyleSheet.create({
   mainContent: {
     margin: 10,
   }
-})
-  ;
+});
