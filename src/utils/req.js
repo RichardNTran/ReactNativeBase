@@ -12,5 +12,12 @@ export default function (endpoint, options = { params: null, data: null, isAccou
     url: parse(endpoint, options.params, options.isAccountApi),
     headers: Config.API.HEADERS,
     data: options.data
+  })
+  .then(response => Promise.resolve(response.data))
+  .catch((errorResponse) => {
+    console.log(errorResponse)
+    const status = get(errorResponse, 'response.status', '');
+    const error = get(errorResponse, 'response.data', { code: 1, data: null, message: ['Network error!'] });
+    return Promise.reject({ status, ...error });
   });
 }

@@ -13,7 +13,8 @@
                 "constants": "./src/constants",
                 "reducers": "./src/reducers",
                 "screens": "./src/screens",
-                "services": "./src/services"
+                "services": "./src/services",
+                "utils": "./src/utils"
               }
             }
           ]
