@@ -1,23 +1,28 @@
-import { put, takeEvery } from 'redux-saga/effects';
+import { put, takeLatest } from 'redux-saga/effects';
 import {
   FETCHING_DATA,
   FETCHING_DATA_SUCCESS,
   FETCHING_DATA_FAILURE,
 } from 'constants/homeConstants';
-import getPeople from 'services/homeServices';
+import { homeServices } from 'services';
 
 function* fetchData(action) {
   try {
     console.log(action);
-    const data = yield getPeople();
+    const data = yield homeServices.login({
+      email: 'nguyen.ba.long@framgia.com',
+      password: 'Abc#abc1',
+    });
+    console.log(data);
     yield put({ type: FETCHING_DATA_SUCCESS, data });
   } catch (e) {
+    console.log(e);
     yield put({ type: FETCHING_DATA_FAILURE });
   }
 }
 
 function* dataSaga() {
-  yield takeEvery(FETCHING_DATA, fetchData);
+  yield takeLatest(FETCHING_DATA, fetchData);
 }
 
 export default dataSaga;
