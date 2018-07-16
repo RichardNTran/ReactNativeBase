@@ -8,8 +8,6 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "babel": "^6.23.0",
-    "babel-plugin-module-alias": "^1.6.0",
     "eslint-import-resolver-babel-module": "^4.0.0",
     "eslint-plugin-import": "^2.13.0",
     "lodash": "^4.17.10",
