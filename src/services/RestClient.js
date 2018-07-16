@@ -56,8 +56,11 @@ export default class RestClient {
 
         // if (status === statusCode.INTERNAL_SERVER_ERROR) {
         // }
-
-        return Promise.reject({ status, ...error });
+        const newError = {
+          status,
+          ...error,
+        };
+        return Promise.reject(newError);
       });
   }
 }

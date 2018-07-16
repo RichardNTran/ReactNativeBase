@@ -11,7 +11,7 @@ export default class HomeServices {
   }
 
   login(params) {
-      return this.restClient.post('login', params, {});
+    return this.restClient.post('login', params, {});
   }
 }
 

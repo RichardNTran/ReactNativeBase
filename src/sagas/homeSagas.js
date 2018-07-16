@@ -1,10 +1,10 @@
 import { put, takeLatest } from 'redux-saga/effects';
+import { homeServices } from 'services';
 import {
   FETCHING_DATA,
   FETCHING_DATA_SUCCESS,
-  FETCHING_DATA_FAILURE,
-} from 'constants/homeConstants';
-import { homeServices } from 'services';
+  FETCHING_DATA_FAIL,
+} from 'constants/homeConstant';
 
 function* fetchData(action) {
   try {
@@ -16,8 +16,7 @@ function* fetchData(action) {
     console.log(data);
     yield put({ type: FETCHING_DATA_SUCCESS, data });
   } catch (e) {
-    console.log(e);
-    yield put({ type: FETCHING_DATA_FAILURE });
+    yield put({ type: FETCHING_DATA_FAIL });
   }
 }
 
